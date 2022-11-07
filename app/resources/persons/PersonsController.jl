@@ -37,7 +37,8 @@ function add()
                   work=payload["work"],
                   age=payload["age"],
                   address=payload["address"])
-    SearchLight.save(person)
+    person = SearchLight.save!(person)
+    Genie.Responses.setheaders(Dict("Location"=>"/api/v1/persons/$(person.id)"))
     # json(Dict(:header=>"/api/v1/persons/[person.id]"), status = 201)
   else
     json(:message=>"Error")
