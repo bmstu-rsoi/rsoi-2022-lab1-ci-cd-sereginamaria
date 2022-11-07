@@ -14,5 +14,5 @@ SearchLight.connect()
 try
   SearchLight.Migrations.create_migrations_table()
 catch
-  SearchLight.Migrations.up("PersonsMigration")
+  SearchLight.Migrations.up("CreateTablePersons")
 end
