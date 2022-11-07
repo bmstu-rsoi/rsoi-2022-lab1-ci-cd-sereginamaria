@@ -15,14 +15,27 @@ jobs:
         with:
           fetch-depth: 0
 
-      # TODO build, test and deploy project
+      - name: Deploy project
+        uses: akhileshns/heroku-deploy@v3.4.6
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: lab1rsoi
+          heroku_email: v44882266@mail.ru
+          usedocker: true
+
+      # TODO test
+
+      - name: Sleep for 90s
+        uses: juliangruber/sleep-action@v1
+        with:
+          time: 90s
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master
         with:
           collection: postman/[inst] Lab1.postman_collection.json
           environment: postman/[inst][heroku] Lab1.postman_environment.json
-          delayRequest: 100
+          delayRequest: 500
           reporters: '[ "cli" ]'
 
       - name: Autograding

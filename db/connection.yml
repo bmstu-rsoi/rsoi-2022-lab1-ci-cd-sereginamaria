@@ -2,8 +2,8 @@ env: ENV["GENIE_ENV"]
 
 dev:
   adapter:  PostgreSQL
-  host:     postgres
+  host:     ec2-52-210-97-223.eu-west-1.compute.amazonaws.com
   port:     5432
-  database: postgres
-  username: postgres
-  password: postgres
+  database: d110qe7nge8k53
+  username: tlhdiwgemkccmt
+  password: 71dd91688f2f88479321a963fc1244ab25d48ffa17f9960f18f040bba5c07899
